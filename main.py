@@ -7,8 +7,26 @@ def encoder(encode):
         encoded_str += str(i)
     return encoded_str
 
-def decoder(encoded_str,encode):
-    print(f"The encoded password is {encoded_str}, and the original password is {encode}.\n")
+
+def decode(password):
+    password_lst = []
+    decoded_password = ""
+
+    try:
+
+        for i in password:
+            password_lst.append(i)
+
+        for digit in password_lst:
+            digit = int(digit)
+            digit -= 3
+            digit = str(digit)
+            decoded_password += digit
+
+        return decoded_password
+
+    except TypeError as exc:
+        print(exc)
 
 
 def menu():
